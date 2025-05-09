@@ -43,7 +43,7 @@ public class Dealership {
 
         }
 
-        private void addVehicle(vehicle) {
+        private void addVehicle() {
         }
 
         private void removeVehicle(vehicle) {
