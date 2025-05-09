@@ -17,9 +17,37 @@ public class Dealership {
         this.inventory = inventory;
 
         private void getVehiclesByPrice() {
+        }
+
+        private void getVehiclesByMakeModel() {
 
         }
 
+        private void getVehicleByYear() {
+
+        }
+
+        private void getVehiclesByColor() {
+
+        }
+
+        private void getVehiclesByMileage() {
+
+        }
+
+        private void getVehiclesByType() {
+
+        }
+
+        private void getAllVehicles() {
+
+        }
+
+        private void addVehicle(vehicle) {
+        }
+
+        private void removeVehicle(vehicle) {
+        }
 
     }
 }
