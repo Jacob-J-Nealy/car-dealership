@@ -44,7 +44,7 @@ public class Dealership {
         }
 
         private void addVehicle() {
-        }
+            System.out.println("");
 
         private void removeVehicle(vehicle) {
         }
