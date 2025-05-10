@@ -49,6 +49,7 @@ public class Dealership {
 
             System.out.print("Please Enter Vehicle VIN Number: ");
             int vin = scanVehicleAttributes.nextInt();
+            scanVehicleAttributes.nextLine(); // scanner eater
 
             System.out.print("Please Enter Vehicle Make: ");
             String make = scanVehicleAttributes.nextLine();
@@ -56,15 +57,15 @@ public class Dealership {
             System.out.print("Please Enter Vehicle Model: ");
             String model = scanVehicleAttributes.nextLine();
 
-            System.out.print("Please Enter Vehicle Type from options below: ");
+            System.out.println("Please Enter Vehicle Type from options below: ");
             System.out.println("C) Car");
             System.out.println("T) Truck");
             System.out.println("S) SUV");
             System.out.println("V) Van");
+            System.out.print("Enter Here: ");
             String vehicleType = scanVehicleAttributes.nextLine();
 
             boolean gettingVehicleType = true;
-
             while (gettingVehicleType) {
                 switch (vehicleType.toUpperCase()) {
 
@@ -85,22 +86,17 @@ public class Dealership {
                         gettingVehicleType = false;
                         break;
                     default:
-                        System.err.println("Invalid Input: Please enter C, T, S, or V");
-                        scanVehicleAttributes.nextLine();
+                        System.err.print("Invalid Input: Please enter C, T, S, or V: ");
+                        vehicleType = scanVehicleAttributes.nextLine();
                 }
             }
 
 
-            /**
-             *  private int    vin;
-             *     private int    year;
-             *     private String make;
-             *     private String model;
-             *     private String vehicleType;
-             *     private String color;
-             *     private int    odometer;
-             *     private double price;
-             */
+
+
+        }
+
+
 
         private void removeVehicle(vehicle) {
         }
