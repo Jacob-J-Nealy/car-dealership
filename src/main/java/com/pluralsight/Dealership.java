@@ -91,6 +91,12 @@ public class Dealership {
                 }
             }
 
+            System.out.print("Please Enter Vehicle Color: ");
+            String color = scanVehicleAttributes.nextLine();
+
+            System.out.println("Please Enter Vehicle Odometer Reading: ");
+            int odometer = scanVehicleAttributes.nextInt();
+            scanVehicleAttributes.nextLine(); // scanner eater
 
 
 

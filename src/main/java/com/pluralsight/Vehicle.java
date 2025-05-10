@@ -25,9 +25,4 @@ public class Vehicle {
         this.odometer = odometer;
         this.price = price;
     }
-
-
-
-
-
 }
