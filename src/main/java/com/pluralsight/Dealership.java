@@ -1,6 +1,8 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Dealership {
@@ -51,6 +53,11 @@ public class Dealership {
             int vin = scanVehicleAttributes.nextInt();
             scanVehicleAttributes.nextLine(); // scanner eater
 
+            System.out.print("Please Enter Vehicle Year: ");
+            int year = scanVehicleAttributes.nextInt();
+            if (year > LocalDate.now().getYear() || year < 1920)
+                System.err.println("Invalid Year");
+
             System.out.print("Please Enter Vehicle Make: ");
             String make = scanVehicleAttributes.nextLine();
 
@@ -94,8 +101,12 @@ public class Dealership {
             System.out.print("Please Enter Vehicle Color: ");
             String color = scanVehicleAttributes.nextLine();
 
-            System.out.println("Please Enter Vehicle Odometer Reading: ");
+            System.out.print("Please Enter Vehicle Odometer Reading: ");
             int odometer = scanVehicleAttributes.nextInt();
+            scanVehicleAttributes.nextLine(); // scanner eater
+
+            System.out.print("Please Enter Vehicle Price: ");
+            double price = scanVehicleAttributes.nextDouble();
             scanVehicleAttributes.nextLine(); // scanner eater
 
 
