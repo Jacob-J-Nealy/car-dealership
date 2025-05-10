@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Dealership {
 
@@ -44,7 +45,62 @@ public class Dealership {
         }
 
         private void addVehicle() {
-            System.out.println("");
+            Scanner scanVehicleAttributes = new Scanner(System.in);
+
+            System.out.print("Please Enter Vehicle VIN Number: ");
+            int vin = scanVehicleAttributes.nextInt();
+
+            System.out.print("Please Enter Vehicle Make: ");
+            String make = scanVehicleAttributes.nextLine();
+
+            System.out.print("Please Enter Vehicle Model: ");
+            String model = scanVehicleAttributes.nextLine();
+
+            System.out.print("Please Enter Vehicle Type from options below: ");
+            System.out.println("C) Car");
+            System.out.println("T) Truck");
+            System.out.println("S) SUV");
+            System.out.println("V) Van");
+            String vehicleType = scanVehicleAttributes.nextLine();
+
+            boolean gettingVehicleType = true;
+
+            while (gettingVehicleType) {
+                switch (vehicleType.toUpperCase()) {
+
+                    case "C":
+                        vehicleType = "Car";
+                        gettingVehicleType = false;
+                        break;
+                    case "T":
+                        vehicleType = "Truck";
+                        gettingVehicleType = false;
+                        break;
+                    case "S":
+                        vehicleType = "SUV";
+                        gettingVehicleType = false;
+                        break;
+                    case "V":
+                        vehicleType = "Van";
+                        gettingVehicleType = false;
+                        break;
+                    default:
+                        System.err.println("Invalid Input: Please enter C, T, S, or V");
+                        scanVehicleAttributes.nextLine();
+                }
+            }
+
+
+            /**
+             *  private int    vin;
+             *     private int    year;
+             *     private String make;
+             *     private String model;
+             *     private String vehicleType;
+             *     private String color;
+             *     private int    odometer;
+             *     private double price;
+             */
 
         private void removeVehicle(vehicle) {
         }
