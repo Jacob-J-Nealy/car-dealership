@@ -53,10 +53,15 @@ public class Dealership {
             int vin = scanVehicleAttributes.nextInt();
             scanVehicleAttributes.nextLine(); // scanner eater
 
-            System.out.print("Please Enter Vehicle Year: ");
-            int year = scanVehicleAttributes.nextInt();
-            if (year > LocalDate.now().getYear() || year < 1920)
-                System.err.println("Invalid Year");
+            boolean validYear = false;
+            while (!validYear) {
+                System.out.print("Please Enter Vehicle Year: ");
+                int year = scanVehicleAttributes.nextInt();
+                if (year <= LocalDate.now().getYear() && year >= 1920) {
+                    validYear = true;
+                } else {
+                    System.err.println("Invalid Year");
+            }
 
             System.out.print("Please Enter Vehicle Make: ");
             String make = scanVehicleAttributes.nextLine();
