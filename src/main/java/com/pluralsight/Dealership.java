@@ -60,7 +60,7 @@ public class Dealership {
                 if (year <= LocalDate.now().getYear() && year >= 1920) {
                     validYear = true;
                 } else {
-                    System.err.println("Invalid Year");
+                    System.err.println("Invalid Year Please Try Again.");
             }
 
             System.out.print("Please Enter Vehicle Make: ");
@@ -76,7 +76,6 @@ public class Dealership {
             System.out.println("V) Van");
             System.out.print("Enter Here: ");
             String vehicleType = scanVehicleAttributes.nextLine();
-
             boolean gettingVehicleType = true;
             while (gettingVehicleType) {
                 switch (vehicleType.toUpperCase()) {
@@ -114,7 +113,7 @@ public class Dealership {
             double price = scanVehicleAttributes.nextDouble();
             scanVehicleAttributes.nextLine(); // scanner eater
 
-
+            Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
 
         }
 
