@@ -28,6 +28,13 @@ public class Vehicle {
 
     @Override
     public String toString() {
+        StringBuilder vehicleBuilder = new StringBuilder();
+
+        vehicleBuilder.append("Vehicle {")
+                      .append()
+
+
+
         return "Vehicle{" +
                 "vin=" + vin +
                 ", year=" + year +
