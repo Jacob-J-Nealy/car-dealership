@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class Dealership {
@@ -50,17 +51,9 @@ public class Dealership {
 
     }
 
-    private void getAllVehicles(Vehicle vehicle) {
-    String line;
-    try {
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE_NAME));
-        while ((line = bufferedReader.readLine()) != null) {
-            String[] vehicleAttributesParts = line.split("\\|");
-            int vin =
-        }
-    } catch (Exception e) {
-        System.err.println("Couldn't Load Inventory");
-    }
+    public List<Vehicle> getAllVehicles() {
+        return inventory;
+
     }
 
     private void addVehicle(Vehicle vehicle) {
