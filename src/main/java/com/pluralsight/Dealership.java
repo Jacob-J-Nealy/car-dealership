@@ -53,7 +53,7 @@ public class Dealership {
     }
 
 
-
-    private void removeVehicle() {
-
+    private void removeVehicle(Vehicle vehicle) {
+        inventory.remove(vehicle);
+    }
 }
