@@ -52,7 +52,6 @@ public class Vehicle {
     public int getVin() {
         return vin;
     }
-
     public void setVin(int vin) {
         this.vin = vin;
     }
@@ -60,7 +59,6 @@ public class Vehicle {
     public int getYear() {
         return year;
     }
-
     public void setYear(int year) {
         this.year = year;
     }
@@ -68,7 +66,6 @@ public class Vehicle {
     public String getMake() {
         return make;
     }
-
     public void setMake(String make) {
         this.make = make;
     }
@@ -76,7 +73,6 @@ public class Vehicle {
     public String getModel() {
         return model;
     }
-
     public void setModel(String model) {
         this.model = model;
     }
@@ -84,7 +80,6 @@ public class Vehicle {
     public String getVehicleType() {
         return vehicleType;
     }
-
     public void setVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
     }
@@ -92,7 +87,6 @@ public class Vehicle {
     public String getColor() {
         return color;
     }
-
     public void setColor(String color) {
         this.color = color;
     }
@@ -100,7 +94,6 @@ public class Vehicle {
     public int getOdometer() {
         return odometer;
     }
-
     public void setOdometer(int odometer) {
         this.odometer = odometer;
     }
@@ -108,7 +101,6 @@ public class Vehicle {
     public double getPrice() {
         return price;
     }
-
     public void setPrice(double price) {
         this.price = price;
     }

@@ -1,11 +1,15 @@
 package com.pluralsight;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
 public class Dealership {
+    private static final String FILE_NAME = "inventory.csv";
+
 
     // Dealership Attributes
     private String name;
@@ -23,32 +27,40 @@ public class Dealership {
 
 
     // Dealership Action Methods
-    private void getVehiclesByPrice() {
+    private void getVehiclesByPrice(Vehicle vehicle) {
     }
 
-    private void getVehiclesByMakeModel() {
-
-    }
-
-    private void getVehicleByYear() {
+    private void getVehiclesByMakeModel(Vehicle vehicle) {
 
     }
 
-    private void getVehiclesByColor() {
+    private void getVehicleByYear(Vehicle vehicle) {
 
     }
 
-    private void getVehiclesByMileage() {
+    private void getVehiclesByColor(Vehicle vehicle) {
 
     }
 
-    private void getVehiclesByType() {
+    private void getVehiclesByMileage(Vehicle vehicle) {
 
     }
 
-    private void getAllVehicles() {
+    private void getVehiclesByType(Vehicle vehicle) {
 
+    }
 
+    private void getAllVehicles(Vehicle vehicle) {
+    String line;
+    try {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE_NAME));
+        while ((line = bufferedReader.readLine()) != null) {
+            String[] vehicleAttributesParts = line.split("\\|");
+            int vin =
+        }
+    } catch (Exception e) {
+        System.err.println("Couldn't Load Inventory");
+    }
     }
 
     private void addVehicle(Vehicle vehicle) {
