@@ -7,12 +7,13 @@ import java.util.Scanner;
 
 public class Dealership {
 
+    // Dealership Attributes
     private String name;
     private String address;
     private String phone;
     private ArrayList<Vehicle> inventory;
 
-    //Constructor
+    // Dealership Constructor
     public Dealership(String name, String address, String phone, ArrayList<Vehicle> inventory) {
         this.name = name;
         this.address = address;
@@ -20,6 +21,8 @@ public class Dealership {
         this.inventory = inventory;
     }
 
+
+    // Dealership Action Methods
     private void getVehiclesByPrice() {
     }
 
@@ -53,7 +56,6 @@ public class Dealership {
 
     }
 
-
     private void removeVehicle(Vehicle vehicle) {
         inventory.remove(vehicle);
         /**
@@ -66,5 +68,27 @@ public class Dealership {
          *     }
          * }
          */
+    }
+
+    // Dealership Getters & Setters
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
