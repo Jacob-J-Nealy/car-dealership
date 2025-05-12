@@ -8,6 +8,12 @@ public class DealershipFileManager {
     private static final String FILE_NAME = "inventory.csv";
 
     public Dealership getDealership() {
+
+        String name = null;
+        String address = null;
+        String phone = null;
+
+
         String line;
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE_NAME));
@@ -27,6 +33,7 @@ public class DealershipFileManager {
     }   catch (Exception e) {
             System.err.println("Couldn't Load Inventory");
     }
+        return Dealership
     }
 
     private void saveDealership() {
