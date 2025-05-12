@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Dealership {
-    private static final String FILE_NAME = "inventory.csv";
 
 
     // Dealership Attributes
@@ -28,26 +27,26 @@ public class Dealership {
 
 
     // Dealership Action Methods
-    private void getVehiclesByPrice(Vehicle vehicle) {
+    private void getVehiclesByPrice(double min, double max) {
     }
 
-    private void getVehiclesByMakeModel(Vehicle vehicle) {
-
-    }
-
-    private void getVehicleByYear(Vehicle vehicle) {
+    private void getVehiclesByMakeModel(String make, String model) {
 
     }
 
-    private void getVehiclesByColor(Vehicle vehicle) {
+    private void getVehicleByYear(int min, int max) {
 
     }
 
-    private void getVehiclesByMileage(Vehicle vehicle) {
+    private void getVehiclesByColor(String color) {
 
     }
 
-    private void getVehiclesByType(Vehicle vehicle) {
+    private void getVehiclesByMileage(int min, int max) {
+
+    }
+
+    private void getVehiclesByType(String vehicleType) {
 
     }
 
@@ -56,12 +55,11 @@ public class Dealership {
 
     }
 
-    private void addVehicle(Vehicle vehicle) {
+    public void addVehicle(Vehicle vehicle) {
         inventory.add(vehicle);
-
     }
 
-    private void removeVehicle(Vehicle vehicle) {
+    public void removeVehicle(Vehicle vehicle) {
         inventory.remove(vehicle);
         /**
          * public void removeVehicleByVin(int vin) {
