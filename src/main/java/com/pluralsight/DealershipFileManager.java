@@ -3,6 +3,7 @@ package com.pluralsight;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+private static final String FILE_NAME = "inventory.csv";
 
 
 public class DealershipFileManager {
@@ -27,6 +28,6 @@ public class DealershipFileManager {
 //        System.err.println("Couldn't Load Inventory");
 //    }
 //
-private static final String FILE_NAME = "inventory.csv";
+
 
 }
