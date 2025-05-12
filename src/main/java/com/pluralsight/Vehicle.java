@@ -26,12 +26,29 @@ public class Vehicle {
         this.price = price;
     }
 
+    // Vehicle toString with StringBuilder
     @Override
     public String toString() {
         StringBuilder vehicleBuilder = new StringBuilder();
+        vehicleBuilder.append(vin);
+        vehicleBuilder.append("|");
+        vehicleBuilder.append(year);
+        vehicleBuilder.append("|");
+        vehicleBuilder.append(make);
+        vehicleBuilder.append("|");
+        vehicleBuilder.append(model);
+        vehicleBuilder.append("|");
+        vehicleBuilder.append(vehicleType);
+        vehicleBuilder.append("|");
+        vehicleBuilder.append(color);
+        vehicleBuilder.append("|");
+        vehicleBuilder.append(odometer);
+        vehicleBuilder.append("|");
+        vehicleBuilder.append(String.format("%.2f", price));
+        return vehicleBuilder.toString();
 
-        vehicleBuilder.append("Vehicle {")
-                      .append()
+
+
 
 
 
