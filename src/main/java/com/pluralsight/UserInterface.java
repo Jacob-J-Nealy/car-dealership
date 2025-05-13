@@ -5,6 +5,26 @@ import java.util.Scanner;
 
 public class UserInterface {
 
+    private void display() {
+
+    }
+
+    private void processFetByPriceRequest() {
+
+    }
+
+    private void processGetByYearRequest() {
+        
+    }
+
+
+
+
+
+
+
+
+}
 //    /**
 //     * More Functionality
 //     *  - Make while loop to validate odometer to not be a negative
@@ -80,7 +100,3 @@ public class UserInterface {
 
 //    Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
 //    inventory.add(vehicle);
-
-
-
-}
