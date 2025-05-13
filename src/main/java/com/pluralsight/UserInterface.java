@@ -4,17 +4,51 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class UserInterface {
+private Dealership dealership;
+
+    private void init() {
+    DealershipFileManager fileManager = new DealershipFileManager();
+    dealership = fileManager.getDealership();
+    }
 
     private void display() {
 
     }
 
-    private void processFetByPriceRequest() {
+    private void processGetByPriceRequest() {
+
+    }
+
+    private void processGetByMakeModelRequest() {
 
     }
 
     private void processGetByYearRequest() {
-        
+
+    }
+
+    private void processGetByColorRequest() {
+
+    }
+
+    private void processGetByMileageRequest() {
+
+    }
+
+    private void processGetByVehicleTypeRequest() {
+
+    }
+
+    private void processGetAllVehiclesRequest() {
+
+    }
+
+    private void processAddVehicleRequest() {
+
+    }
+
+    private void processRemoveVehicleRequest() {
+
     }
 
 
