@@ -89,18 +89,15 @@ Scanner scanner = new Scanner(System.in);
     private void displayVehicles(List<Vehicle> vehicles) {
         System.out.println("All Vehicles in Inventory");
         System.out.println("______________________________");
-        for (Vehicle vehicle : dealership.inventory) {
-            System.out.println(vehicle);
-        }
 
         if (vehicles.isEmpty()) {
-            System.out.println("No Matching vehicles found.");
+            System.out.println("No Vehicles in  Inventory");
+        } else {
+            for (Vehicle vehicle : vehicles) {
+                System.out.println(vehicle);
+            }
         }
     }
-
-
-
-
 
     private void processGetByPriceRequest() {
 
