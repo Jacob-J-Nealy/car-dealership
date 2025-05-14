@@ -50,7 +50,7 @@ public class Dealership {
 
     }
 
-    public List<Vehicle> getAllVehicles() {
+    public ArrayList<Vehicle> getAllVehicles() {
         return inventory;
 
     }

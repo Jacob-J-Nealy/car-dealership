@@ -6,13 +6,32 @@ import java.util.Scanner;
 public class UserInterface {
 private Dealership dealership;
 
+    // display() HELPER METHODS
     private void init() {
     DealershipFileManager fileManager = new DealershipFileManager();
     dealership = fileManager.getDealership();
     }
 
-    private void display() {
+    private Scanner displayMenu() {
+        System.out.println("______________________________________");
+        System.out.println("Welcome to the Dealership!");
+        System.out.println("______________________________________");
+        System.out.println("Please Selection an Option Below:\n");
+        System.out.println("1) Search ALL Vehicles");
+        System.out.println("2) Search Vehicle By Price");
+        System.out.println("3) Search Vehicle By Make & Model ");
+        System.out.println("4) Search Vehicle By Year");
+        System.out.println("5) Search Vehicle By Color");
+        System.out.println("6) Search Vehicle By Mileage");
+        System.out.println("7) Search Vehicle By Type");
+        System.out.println("______________________________________");
+        System.out.println("8) Add *NEW* Vehicle");
+        System.out.println("9) Remove Vehicle");
+        System.out.println("\n");
+    }
 
+    private void display() {
+        init();
     }
 
     private void processGetByPriceRequest() {
