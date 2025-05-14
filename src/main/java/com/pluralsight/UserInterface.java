@@ -8,6 +8,46 @@ public class UserInterface {
 private Dealership dealership;
 Scanner scanner = new Scanner(System.in);
 
+
+    // Helper Methods
+    private void init() {
+        DealershipFileManager fileManager = new DealershipFileManager();
+        dealership = fileManager.getDealership();
+    }
+    private int getDisplayMenuInput() {
+        System.out.println("______________________________________");
+        System.out.println("Welcome to the Dealership!");
+        System.out.println("______________________________________");
+        System.out.println("Please Selection an Option Below:\n");
+        System.out.println("1) Search ALL Vehicles");
+        System.out.println("2) Search Vehicle By Price");
+        System.out.println("3) Search Vehicle By Make & Model ");
+        System.out.println("4) Search Vehicle By Year");
+        System.out.println("5) Search Vehicle By Color");
+        System.out.println("6) Search Vehicle By Mileage");
+        System.out.println("7) Search Vehicle By Type");
+        System.out.println("______________________________________");
+        System.out.println("8) Add *NEW* Vehicle");
+        System.out.println("9) Remove Vehicle");
+        System.out.print("\nEnter Here: ");
+        int displayMenuInput = scanner.nextInt();
+        scanner.nextLine(); // scanner eater
+
+        return displayMenuInput;
+    }
+    private void displayVehicles(List<Vehicle> inventory) {
+        System.out.println("All Vehicles in Inventory");
+        System.out.println("______________________________");
+
+        if (inventory.isEmpty()) {
+            System.out.println("No Vehicles in  Inventory");
+        } else {
+            for (Vehicle vehicle : inventory) {
+                System.out.println(vehicle);
+            }
+        }
+    }
+
     private void display() {
         init();
         boolean running = true;
@@ -60,45 +100,7 @@ Scanner scanner = new Scanner(System.in);
         }
 
     }
-        private void init() {
-        DealershipFileManager fileManager = new DealershipFileManager();
-        dealership = fileManager.getDealership();
-    }
-        private int getDisplayMenuInput() {
-        System.out.println("______________________________________");
-        System.out.println("Welcome to the Dealership!");
-        System.out.println("______________________________________");
-        System.out.println("Please Selection an Option Below:\n");
-        System.out.println("1) Search ALL Vehicles");
-        System.out.println("2) Search Vehicle By Price");
-        System.out.println("3) Search Vehicle By Make & Model ");
-        System.out.println("4) Search Vehicle By Year");
-        System.out.println("5) Search Vehicle By Color");
-        System.out.println("6) Search Vehicle By Mileage");
-        System.out.println("7) Search Vehicle By Type");
-        System.out.println("______________________________________");
-        System.out.println("8) Add *NEW* Vehicle");
-        System.out.println("9) Remove Vehicle");
-        System.out.print("\nEnter Here: ");
-        int displayMenuInput = scanner.nextInt();
-        scanner.nextLine(); // scanner eater
-
-        return displayMenuInput;
-    }
-
-    private void displayVehicles(List<Vehicle> vehicles) {
-        System.out.println("All Vehicles in Inventory");
-        System.out.println("______________________________");
-
-        if (vehicles.isEmpty()) {
-            System.out.println("No Vehicles in  Inventory");
-        } else {
-            for (Vehicle vehicle : vehicles) {
-                System.out.println(vehicle);
-            }
-        }
-    }
-
+    
     private void processGetByPriceRequest() {
 
     }
@@ -124,7 +126,8 @@ Scanner scanner = new Scanner(System.in);
     }
 
     private void processGetAllVehiclesRequest() {
-
+        List<Vehicle> inventory = dealership.getAllVehicles();
+        displayVehicles(inventory);
     }
 
     private void processAddVehicleRequest() {
