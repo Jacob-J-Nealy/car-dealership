@@ -9,16 +9,27 @@ Scanner scanner = new Scanner(System.in);
 
     private void display() {
         init();
-        displayMenu();
+        getDisplayMenuInput();
 
-        
+        int displayMenuInput = getDisplayMenuInput();
+        switch (displayMenuInput) {
+            case 1:
+                processGetAllVehiclesRequest();
+                break;
+            case 2:
+                processGetByPriceRequest();
+                break;
+            case 3:
+                processGetByMakeModelRequest();
+                break;
+        }
 
     }
         private void init() {
         DealershipFileManager fileManager = new DealershipFileManager();
         dealership = fileManager.getDealership();
     }
-        private int displayMenu() {
+        private int getDisplayMenuInput() {
         System.out.println("______________________________________");
         System.out.println("Welcome to the Dealership!");
         System.out.println("______________________________________");
@@ -34,10 +45,10 @@ Scanner scanner = new Scanner(System.in);
         System.out.println("8) Add *NEW* Vehicle");
         System.out.println("9) Remove Vehicle");
         System.out.print("\nEnter Here: ");
-        int searchByInput = scanner.nextInt();
+        int displayMenuInput = scanner.nextInt();
         scanner.nextLine(); // scanner eater
 
-        return searchByInput;
+        return displayMenuInput;
     }
 
     private void processGetByPriceRequest() {
