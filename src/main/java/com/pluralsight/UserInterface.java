@@ -109,8 +109,13 @@ Scanner scanner = new Scanner(System.in);
         double min = scanner.nextDouble();
         System.out.print("Please Enter max. price for Vehicle: $");
         double max = scanner.nextDouble();
+        scanner.nextLine(); // scanner eater
         System.out.println("______________________________________");
         System.out.printf("\nSearching for Vehicles between $%.2f - $%.2f\n", min, max);
+
+        List<Vehicle> processGetByPriceFound = dealership.getVehiclesByPrice(min, max);
+
+        displayVehicles(processGetByPriceFound);
 
 
     }

@@ -27,7 +27,8 @@ public class Dealership {
 
 
     // Dealership Action Methods
-    private void getVehiclesByPrice(double min, double max) {
+    public List<Vehicle> getVehiclesByPrice(double min, double max) {
+        return inventory;
     }
 
     private void getVehiclesByMakeModel(String make, String model) {
@@ -50,7 +51,7 @@ public class Dealership {
 
     }
 
-    public ArrayList<Vehicle> getAllVehicles() {
+    public List<Vehicle> getAllVehicles() {
         return inventory;
 
     }
