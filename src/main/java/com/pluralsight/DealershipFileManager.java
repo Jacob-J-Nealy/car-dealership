@@ -36,9 +36,9 @@ public class DealershipFileManager {
                 int odometer = Integer.parseInt(vehicleAttributesParts[6]);
                 double price = Double.parseDouble(vehicleAttributesParts[7]);
                 inventory.add(new Vehicle(vin, year, make, model, vehicleType, color, odometer, price));
-
-                bufferedReader.close();
             }
+            bufferedReader.close();
+
         } catch (Exception e) {
             System.err.println("Couldn't Load Dealership");
         }

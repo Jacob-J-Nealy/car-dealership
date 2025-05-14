@@ -48,7 +48,7 @@ Scanner scanner = new Scanner(System.in);
         }
     }
 
-    private void display() {
+    public void display() {
         init();
         boolean running = true;
 
@@ -100,7 +100,7 @@ Scanner scanner = new Scanner(System.in);
         }
 
     }
-    
+
     private void processGetByPriceRequest() {
 
     }
