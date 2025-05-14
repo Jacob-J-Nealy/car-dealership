@@ -22,6 +22,18 @@ Scanner scanner = new Scanner(System.in);
             case 3:
                 processGetByMakeModelRequest();
                 break;
+            case 4:
+                processGetByYearRequest();
+                break;
+            case 5:
+                processGetByColorRequest();
+                break;
+            case 6:
+                processGetByMileageRequest();
+                break;
+            case 7:
+                
+
         }
 
     }
