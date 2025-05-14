@@ -5,14 +5,20 @@ import java.util.Scanner;
 
 public class UserInterface {
 private Dealership dealership;
+Scanner scanner = new Scanner(System.in);
 
-    // display() HELPER METHODS
-    private void init() {
-    DealershipFileManager fileManager = new DealershipFileManager();
-    dealership = fileManager.getDealership();
+    private void display() {
+        init();
+        displayMenu();
+
+        
+
     }
-
-    private Scanner displayMenu() {
+        private void init() {
+        DealershipFileManager fileManager = new DealershipFileManager();
+        dealership = fileManager.getDealership();
+    }
+        private int displayMenu() {
         System.out.println("______________________________________");
         System.out.println("Welcome to the Dealership!");
         System.out.println("______________________________________");
@@ -27,11 +33,11 @@ private Dealership dealership;
         System.out.println("______________________________________");
         System.out.println("8) Add *NEW* Vehicle");
         System.out.println("9) Remove Vehicle");
-        System.out.println("\n");
-    }
+        System.out.print("\nEnter Here: ");
+        int searchByInput = scanner.nextInt();
+        scanner.nextLine(); // scanner eater
 
-    private void display() {
-        init();
+        return searchByInput;
     }
 
     private void processGetByPriceRequest() {
