@@ -9,31 +9,53 @@ Scanner scanner = new Scanner(System.in);
 
     private void display() {
         init();
-        getDisplayMenuInput();
+        boolean running = true;
 
-        int displayMenuInput = getDisplayMenuInput();
-        switch (displayMenuInput) {
-            case 1:
-                processGetAllVehiclesRequest();
-                break;
-            case 2:
-                processGetByPriceRequest();
-                break;
-            case 3:
-                processGetByMakeModelRequest();
-                break;
-            case 4:
-                processGetByYearRequest();
-                break;
-            case 5:
-                processGetByColorRequest();
-                break;
-            case 6:
-                processGetByMileageRequest();
-                break;
-            case 7:
-                
+        while (running) {
 
+            int displayMenuInput = getDisplayMenuInput();
+
+            switch (displayMenuInput) {
+                case 1:
+                    processGetAllVehiclesRequest();
+                    running = false;
+                    break;
+                case 2:
+                    processGetByPriceRequest();
+                    running = false;
+                    break;
+                case 3:
+                    processGetByMakeModelRequest();
+                    running = false;
+                    break;
+                case 4:
+                    processGetByYearRequest();
+                    running = false;
+                    break;
+                case 5:
+                    processGetByColorRequest();
+                    running = false;
+                    break;
+                case 6:
+                    processGetByMileageRequest();
+                    running = false;
+                    break;
+                case 7:
+                    processGetByVehicleTypeRequest();
+                    running = false;
+                    break;
+                case 8:
+                    processAddVehicleRequest();
+                    running = false;
+                    break;
+                case 9:
+                    processRemoveVehicleRequest();
+                    running = false;
+                    break;
+                default:
+                    System.err.println("Incorrect Value Try Again");
+                    break;
+            }
         }
 
     }
@@ -62,6 +84,10 @@ Scanner scanner = new Scanner(System.in);
 
         return displayMenuInput;
     }
+
+
+
+
 
     private void processGetByPriceRequest() {
 
