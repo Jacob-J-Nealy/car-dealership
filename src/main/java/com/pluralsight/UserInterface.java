@@ -121,6 +121,19 @@ Scanner scanner = new Scanner(System.in);
     }
 
     private void processGetByMakeModelRequest() {
+        System.out.println("Searching for Vehicle By Make & Model...");
+        System.out.println("______________________________________");
+
+        System.out.print("Please Enter Vehicle Make & Model: ");
+        String makeModel = scanner.nextLine().trim();
+
+        String[] makeModelSplit = makeModel.split(" ");
+        String make = makeModelSplit[0];
+        String model = makeModelSplit[1];
+
+        System.out.println("Your Car's Make: " + make);
+        System.out.println("Your Car's Model: " + model);
+
 
     }
 
