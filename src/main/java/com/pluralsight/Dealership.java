@@ -60,18 +60,13 @@ public class Dealership {
         inventory.add(vehicle);
     }
 
-    public void removeVehicle(Vehicle vehicle) {
-        inventory.remove(vehicle);
-        /**
-         * public void removeVehicleByVin(int vin) {
-         *     for (Vehicle v : inventory) {
-         *         if (v.getVin() == vin) {
-         *             inventory.remove(v);
-         *             break;
-         *         }
-         *     }
-         * }
-         */
+    public void removeVehicle(int vin) {
+              for (Vehicle v : inventory) {
+                  if (v.getVin() == vin) {
+                      inventory.remove(v);
+                      break;
+                  }
+              }
     }
 
     // Dealership Getters & Setters

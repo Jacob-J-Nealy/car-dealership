@@ -283,7 +283,13 @@ public class UserInterface {
         System.out.println("Vehicle successfully added to inventory!");
     }
     private void processRemoveVehicleRequest() {
-        System.out.println("Enter VIN of the vehicle you would like to remove:");
+
+        System.out.print("Enter VIN of the vehicle you would like to remove: ");
+        int vinRemoval = scanner.nextInt();
+        scanner.nextLine(); // scanner eater
+
+        boolean removed = dealership.removeVehicle(vinRemoval);
+
     }
 }
 
