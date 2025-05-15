@@ -43,12 +43,12 @@ public class Dealership {
         return inventory;
     }
 
-    private void getVehiclesByMileage(int min, int max) {
-
+    public List<Vehicle> getVehiclesByMileage(int min, int max) {
+        return inventory;
     }
 
-    private void getVehiclesByType(String vehicleType) {
-
+    public List<Vehicle> getVehiclesByType(String vehicleType) {
+        return inventory;
     }
 
     public List<Vehicle> getAllVehicles() {

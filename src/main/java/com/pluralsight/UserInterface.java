@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
-private Dealership dealership;
-Scanner scanner = new Scanner(System.in);
+    private Dealership dealership;
+    Scanner scanner = new Scanner(System.in);
 
 
     // Helper Methods
@@ -48,6 +48,7 @@ Scanner scanner = new Scanner(System.in);
         }
     }
 
+    // Display Methods
     public void display() {
         init();
         boolean running = true;
@@ -101,6 +102,7 @@ Scanner scanner = new Scanner(System.in);
 
     }
 
+    // Process Methods
     private void processGetByPriceRequest() {
         System.out.println("Searching Vehicle By Price...");
         System.out.println("______________________________________");
@@ -119,7 +121,6 @@ Scanner scanner = new Scanner(System.in);
 
 
     }
-
     private void processGetByMakeModelRequest() {
         System.out.println("Searching for Vehicle By Make & Model...");
         System.out.println("______________________________________");
@@ -137,7 +138,6 @@ Scanner scanner = new Scanner(System.in);
         List<Vehicle> processGetByMakeModelFound = dealership.getVehiclesByMakeModel(make, model);
         displayVehicles(processGetByMakeModelFound);
     }
-
     private void processGetByYearRequest() {
         System.out.println("Searching Vehicles By Year...");
         System.out.println("______________________________________");
@@ -154,7 +154,6 @@ Scanner scanner = new Scanner(System.in);
         List<Vehicle> processGetByYearFound = dealership.getVehicleByYear(min, max);
         displayVehicles(processGetByYearFound);
     }
-
     private void processGetByColorRequest() {
         System.out.println("Searching Vehicles By Color...");
         System.out.println("______________________________________");
@@ -162,112 +161,127 @@ Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Vehicle Color: ");
         String color = scanner.nextLine().trim();
 
-        System.out.printf("Loading All Vehicle in %s Color from Inventory", color);
+        System.out.printf("Loading All Vehicle in %s Color from Inventory...", color);
         List<Vehicle> processGetByColorFound = dealership.getVehiclesByColor(color);
         displayVehicles(processGetByColorFound);
     }
-
     private void processGetByMileageRequest() {
+        System.out.println("Searching Vehicle By Mileage...");
+        System.out.println("______________________________________");
 
+        System.out.print("Enter minimum mileage: ");
+        int min = scanner.nextInt();
+
+        System.out.print("Enter maximum mileage: ");
+        int max = scanner.nextInt();
+        scanner.nextLine(); // scanner eater
+
+        List<Vehicle> processGetByMileageFound = dealership.getVehiclesByMileage(min, max);
+        displayVehicles(processGetByMileageFound);
     }
-
     private void processGetByVehicleTypeRequest() {
+        System.out.println("Searching Vehicle By Type...");
+        System.out.println("______________________________________");
+
+        System.out.print("Enter Vehicle Type: ");
+        String vehicleType = scanner.nextLine().trim();
+
+        System.out.printf("Loading All %ss from Inventory...");
+
+        List<Vehicle> processGetByVehicleTypeFound = dealership.getVehiclesByType(vehicleType);
+        displayVehicles(processGetByVehicleTypeFound);
 
     }
-
     private void processGetAllVehiclesRequest() {
+        System.out.println("Displaying All Vehicles in Inventory...");
+        System.out.println("______________________________________");
+
         List<Vehicle> inventory = dealership.getAllVehicles();
         displayVehicles(inventory);
     }
 
-    private void processAddVehicleRequest() {
+    private List<Vehicle> processAddVehicleRequest() {
+        /**
+         * Future Functionality
+         *  - Make while loop to validate odometer to not be a negative
+         *  - Make while loop to validate price to not be a negative
+         *  -
+         */
+        Scanner scanVehicleAttributes = new Scanner(System.in);
+
+        System.out.print("Please Enter Vehicle VIN Number: ");
+        int vin = scanVehicleAttributes.nextInt();
+        scanVehicleAttributes.nextLine(); // scanner eater
+
+        int year = 0;
+        boolean validYear = false;
+
+        while (!validYear) {
+            System.out.print("Please Enter Vehicle Year: ");
+            year = scanVehicleAttributes.nextInt();
+            if (year <= LocalDate.now().getYear() && year >= 1920) {
+                validYear = true;
+            } else {
+                System.err.println("Invalid Year Please Try Again.");
+            }
+
+            System.out.print("Please Enter Vehicle Make: ");
+            String make = scanVehicleAttributes.nextLine();
+
+            System.out.print("Please Enter Vehicle Model: ");
+            String model = scanVehicleAttributes.nextLine();
+
+            System.out.println("Please Enter Vehicle Type from options below: ");
+            System.out.println("C) Car");
+            System.out.println("T) Truck");
+            System.out.println("S) SUV");
+            System.out.println("V) Van");
+            System.out.print("Enter Here: ");
+            String vehicleType = scanVehicleAttributes.nextLine();
+            boolean gettingVehicleType = true;
+            while (gettingVehicleType) {
+                switch (vehicleType.toUpperCase()) {
+
+                    case "C":
+                        vehicleType = "Car";
+                        gettingVehicleType = false;
+                        break;
+                    case "T":
+                        vehicleType = "Truck";
+                        gettingVehicleType = false;
+                        break;
+                    case "S":
+                        vehicleType = "SUV";
+                        gettingVehicleType = false;
+                        break;
+                    case "V":
+                        vehicleType = "Van";
+                        gettingVehicleType = false;
+                        break;
+                    default:
+                        System.err.print("Invalid Input: Please enter C, T, S, or V: ");
+                        vehicleType = scanVehicleAttributes.nextLine();
+                }
+            }
+
+            System.out.print("Please Enter Vehicle Color: ");
+            String color = scanVehicleAttributes.nextLine();
+
+            System.out.print("Please Enter Vehicle Odometer Reading: ");
+            int odometer = scanVehicleAttributes.nextInt();
+            scanVehicleAttributes.nextLine(); // scanner eater
+
+            System.out.print("Please Enter Vehicle Price: ");
+            double price = scanVehicleAttributes.nextDouble();
+            scanVehicleAttributes.nextLine(); // scanner eater
+
+            Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+            dealership.inventory.add(vehicle);
+        }
 
     }
-
     private void processRemoveVehicleRequest() {
 
     }
-
-
-
-
-
-
-
-
 }
-//    /**
-//     * More Functionality
-//     *  - Make while loop to validate odometer to not be a negative
-//     *  - Make while loop to validate price to not be a negative
-//     *  -
-//     */
-//    Scanner scanVehicleAttributes = new Scanner(System.in);
-//
-//            System.out.print("Please Enter Vehicle VIN Number: ");
-//    int vin = scanVehicleAttributes.nextInt();
-//            scanVehicleAttributes.nextLine(); // scanner eater
-//
-//    int year = 0;
-//    boolean validYear = false;
-//            while (!validYear) {
-//        System.out.print("Please Enter Vehicle Year: ");
-//        year = scanVehicleAttributes.nextInt();
-//        if (year <= LocalDate.now().getYear() && year >= 1920) {
-//            validYear = true;
-//        } else {
-//            System.err.println("Invalid Year Please Try Again.");
-//        }
-//
-//        System.out.print("Please Enter Vehicle Make: ");
-//        String make = scanVehicleAttributes.nextLine();
-//
-//        System.out.print("Please Enter Vehicle Model: ");
-//        String model = scanVehicleAttributes.nextLine();
-//
-//        System.out.println("Please Enter Vehicle Type from options below: ");
-//        System.out.println("C) Car");
-//        System.out.println("T) Truck");
-//        System.out.println("S) SUV");
-//        System.out.println("V) Van");
-//        System.out.print("Enter Here: ");
-//        String vehicleType = scanVehicleAttributes.nextLine();
-//        boolean gettingVehicleType = true;
-//        while (gettingVehicleType) {
-//            switch (vehicleType.toUpperCase()) {
-//
-//                case "C":
-//                    vehicleType = "Car";
-//                    gettingVehicleType = false;
-//                    break;
-//                case "T":
-//                    vehicleType = "Truck";
-//                    gettingVehicleType = false;
-//                    break;
-//                case "S":
-//                    vehicleType = "SUV";
-//                    gettingVehicleType = false;
-//                    break;
-//                case "V":
-//                    vehicleType = "Van";
-//                    gettingVehicleType = false;
-//                    break;
-//                default:
-//                    System.err.print("Invalid Input: Please enter C, T, S, or V: ");
-//                    vehicleType = scanVehicleAttributes.nextLine();
-//            }
-//        }
-//
-//        System.out.print("Please Enter Vehicle Color: ");
-//        String color = scanVehicleAttributes.nextLine();
-//
-//        System.out.print("Please Enter Vehicle Odometer Reading: ");
-//        int odometer = scanVehicleAttributes.nextInt();
-//        scanVehicleAttributes.nextLine(); // scanner eater
-//
-//        System.out.print("Please Enter Vehicle Price: ");
-//        double price = scanVehicleAttributes.nextDouble();
-//        scanVehicleAttributes.nextLine(); // scanner eater
 
-//    Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
-//    inventory.add(vehicle);
