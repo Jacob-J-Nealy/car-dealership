@@ -1,7 +1,9 @@
 package com.pluralsight;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class DealershipFileManager {
@@ -48,7 +50,10 @@ public class DealershipFileManager {
     private void saveDealership() {
 
     }
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME, true));
 
+        }
 
 
 }
