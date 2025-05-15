@@ -288,7 +288,7 @@ public class UserInterface {
         int vinRemoval = scanner.nextInt();
         scanner.nextLine(); // scanner eater
 
-        boolean removed = dealership.removeVehicle(vinRemoval);
+       dealership.removeVehicle(vinRemoval);
 
     }
 }
