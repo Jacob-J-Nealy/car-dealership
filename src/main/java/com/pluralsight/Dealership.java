@@ -31,8 +31,8 @@ public class Dealership {
         return inventory;
     }
 
-    private void getVehiclesByMakeModel(String make, String model) {
-
+    public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
+    return inventory;
     }
 
     private void getVehicleByYear(int min, int max) {

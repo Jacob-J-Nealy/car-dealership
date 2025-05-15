@@ -111,7 +111,7 @@ Scanner scanner = new Scanner(System.in);
         double max = scanner.nextDouble();
         scanner.nextLine(); // scanner eater
         System.out.println("______________________________________");
-        System.out.printf("\nSearching for Vehicles between $%.2f - $%.2f...\n", min, max);
+        System.out.printf("\nLoading Vehicles between $%.2f - $%.2f...\n", min, max);
 
         List<Vehicle> processGetByPriceFound = dealership.getVehiclesByPrice(min, max);
 
@@ -126,15 +126,16 @@ Scanner scanner = new Scanner(System.in);
 
         System.out.print("Please Enter Vehicle Make & Model: ");
         String makeModel = scanner.nextLine().trim();
+        System.out.println("______________________________________");
+
 
         String[] makeModelSplit = makeModel.split(" ");
         String make = makeModelSplit[0];
         String model = makeModelSplit[1];
 
-        System.out.println("Your Car's Make: " + make);
-        System.out.println("Your Car's Model: " + model);
-
-
+        System.out.printf("Loading All %s %s's in Inventory...\n", make, model);
+        List<Vehicle> processGetByMakeModelFound = dealership.getVehiclesByMakeModel(make, model);
+        displayVehicles(processGetByMakeModelFound);
     }
 
     private void processGetByYearRequest() {
