@@ -200,7 +200,7 @@ public class UserInterface {
         displayVehicles(inventory);
     }
 
-    private List<Vehicle> processAddVehicleRequest() {
+    private void processAddVehicleRequest() {
         /**
          * Future Functionality
          *  - Make while loop to validate odometer to not be a negative
@@ -242,7 +242,6 @@ public class UserInterface {
 
         while (gettingVehicleType) {
             switch (vehicleType.toUpperCase()) {
-
                 case "C":
                     vehicleType = "Car";
                     gettingVehicleType = false;
@@ -262,28 +261,29 @@ public class UserInterface {
                 default:
                     System.err.print("Invalid Input: Please enter C, T, S, or V: ");
                     vehicleType = scanVehicleAttributes.nextLine();
-                }
+                    break;
             }
+        }
 
-            System.out.print("Please Enter Vehicle Color: ");
-            String color = scanVehicleAttributes.nextLine();
 
-            System.out.print("Please Enter Vehicle Odometer Reading: ");
-            int odometer = scanVehicleAttributes.nextInt();
-            scanVehicleAttributes.nextLine(); // scanner eater
+        System.out.print("Please Enter Vehicle Color: ");
+        String color = scanVehicleAttributes.nextLine();
 
-            System.out.print("Please Enter Vehicle Price: ");
-            double price = scanVehicleAttributes.nextDouble();
-            scanVehicleAttributes.nextLine(); // scanner eater
+        System.out.print("Please Enter Vehicle Odometer Reading: ");
+        int odometer = scanVehicleAttributes.nextInt();
+        scanVehicleAttributes.nextLine(); // scanner eater
 
-            Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
-            dealership.inventory.add(vehicle);
+        System.out.print("Please Enter Vehicle Price: ");
+        double price = scanVehicleAttributes.nextDouble();
+        scanVehicleAttributes.nextLine(); // scanner eater
 
-        return dealership.inventory;
+        Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+        dealership.addVehicle(vehicle);
 
+        System.out.println("Vehicle successfully added to inventory!");
     }
     private void processRemoveVehicleRequest() {
-
+        System.out.println("Enter VIN of the vehicle you would like to remove:");
     }
 }
 
