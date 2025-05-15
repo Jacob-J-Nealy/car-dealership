@@ -56,7 +56,7 @@ public class Vehicle {
         this.vin = vin;
     }
 
-    public int getYear() {
+    public int getMileage() {
         return year;
     }
     public void setYear(int year) {

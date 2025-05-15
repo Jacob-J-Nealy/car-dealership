@@ -226,10 +226,10 @@ public class UserInterface {
             }
         }
 
-        System.out.print("Please Enter Vehicle Make: ");
+        System.out.println("Please Enter Vehicle Make: ");
         String make = scanVehicleAttributes.nextLine();
 
-        System.out.print("Please Enter Vehicle Model: ");
+        System.out.println("Please Enter Vehicle Model: ");
         String model = scanVehicleAttributes.nextLine();
         System.out.println("Please Enter Vehicle Type from options below: ");
         System.out.println("C) Car");

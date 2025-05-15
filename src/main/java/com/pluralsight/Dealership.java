@@ -1,15 +1,9 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 
 public class Dealership {
-
 
     // Dealership Attributes
     private String name;
@@ -25,6 +19,9 @@ public class Dealership {
         this.inventory = inventory;
     }
 
+    public Dealership() {
+    }
+
 
     // Dealership Action Methods
     public List<Vehicle> getVehiclesByPrice(double min, double max) {
@@ -37,7 +34,6 @@ public class Dealership {
         }
         return vehiclesByPrice;
     }
-
     public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
 
         List<Vehicle> vehiclesByMakeModel = new ArrayList<>();
@@ -50,32 +46,51 @@ public class Dealership {
 
         return vehiclesByMakeModel;
     }
-
     public List<Vehicle> getVehicleByYear(int min, int max) {
-        return inventory;
-    }
 
+        List<Vehicle> vehiclesByYear = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getMileage() >= min && vehicle.getMileage() <= max) {
+                vehiclesByYear.add(vehicle);
+            }
+        }
+        return vehiclesByYear;
+    }
     public List<Vehicle> getVehiclesByColor(String color) {
-        return inventory;
-    }
 
+        List<Vehicle> vehiclesByColor = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getColor().equalsIgnoreCase(color)) {
+                vehiclesByColor.add(vehicle);
+            }
+        }
+        return vehiclesByColor;
+    }
     public List<Vehicle> getVehiclesByMileage(int min, int max) {
-        return inventory;
+        List<Vehicle> vehiclesByMileage = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getOdometer() >= min && vehicle.getOdometer() <= max) {
+                vehiclesByMileage.add(vehicle);
+            }
+        }
+        return vehiclesByMileage;
     }
-
     public List<Vehicle> getVehiclesByType(String vehicleType) {
-        return inventory;
+        List<Vehicle> vehiclesByType = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getVehicleType().equalsIgnoreCase(vehicleType)) {
+                vehiclesByType.add(vehicle);
+            }
+        }
+        return vehiclesByType;
     }
-
     public List<Vehicle> getAllVehicles() {
         return inventory;
 
     }
-
     public void addVehicle(Vehicle vehicle) {
         inventory.add(vehicle);
     }
-
     public boolean removeVehicle(int vin) {
         for (Vehicle vehicle : inventory) {
             if (vehicle.getVin() == vin) {
