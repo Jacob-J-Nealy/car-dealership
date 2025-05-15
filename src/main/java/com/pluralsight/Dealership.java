@@ -32,11 +32,11 @@ public class Dealership {
     }
 
     public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
-    return inventory;
+        return inventory;
     }
 
-    private void getVehicleByYear(int min, int max) {
-
+    public List<Vehicle> getVehicleByYear(int min, int max) {
+        return inventory;
     }
 
     private void getVehiclesByColor(String color) {

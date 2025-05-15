@@ -139,6 +139,20 @@ Scanner scanner = new Scanner(System.in);
     }
 
     private void processGetByYearRequest() {
+        System.out.println("Searching Vehicles By Year...");
+        System.out.println("______________________________________");
+
+        System.out.print("Enter minimum vehicle year: ");
+        int min = scanner.nextInt();
+
+        System.out.print("Enter maximum vehicle year: ");
+        int max = scanner.nextInt();
+        scanner.nextLine(); // scanner eater
+
+        System.out.printf("Loading All Vehicles from %d to %d...", min, max);
+
+        List<Vehicle> processGetByYearFound = dealership.getVehicleByYear(min, max);
+        displayVehicles(processGetByYearFound);
 
     }
 
