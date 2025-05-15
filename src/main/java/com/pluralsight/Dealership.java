@@ -29,15 +29,26 @@ public class Dealership {
     // Dealership Action Methods
     public List<Vehicle> getVehiclesByPrice(double min, double max) {
 
+        List<Vehicle> vehiclesByPrice = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
-            if (vehicle.getPrice() >= min &&)
+            if (vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
+                vehiclesByPrice.add(vehicle);
+            }
         }
-
-        return inventory;
+        return vehiclesByPrice;
     }
 
     public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
-        return inventory;
+
+        List<Vehicle> vehiclesByMakeModel = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getMake().equalsIgnoreCase(make) &&
+                vehicle.getModel().equalsIgnoreCase(model)) {
+                vehiclesByMakeModel.add(vehicle);
+            }
+        }
+
+        return vehiclesByMakeModel;
     }
 
     public List<Vehicle> getVehicleByYear(int min, int max) {
