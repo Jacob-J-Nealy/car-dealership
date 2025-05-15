@@ -5,6 +5,7 @@ public class Program {
 
         // Initializing a New UserInterface
         UserInterface dealershipInterface = new UserInterface();
+        Dealership dealership = new Dealership()
 
         // Displaying the Dealership Interface
         dealershipInterface.display();

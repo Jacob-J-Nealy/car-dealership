@@ -1,13 +1,11 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 public class DealershipFileManager {
     private static final String FILE_NAME = "inventory.csv";
+    private Dealership dealership;
 
     public Dealership getDealership() {
         ArrayList<Vehicle> inventory = new ArrayList<>();
@@ -44,16 +42,27 @@ public class DealershipFileManager {
         } catch (Exception e) {
             System.err.println("Couldn't Load Dealership");
         }
-        return new Dealership(name, address,phone, inventory);
+        dealership = new Dealership(name, address, phone, inventory);
+        return dealership;
     }
 
     private void saveDealership() {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME))) {
+            bufferedWriter.write( + "|" +
+                    getDealership().getAddress() + "|" +
+                    getDealership().getPhone());
+            bufferedWriter.newLine();
 
-    }
-        try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME, true));
+            for (Vehicle vehicle : getDealership().getAllVehicles()) {
+                bufferedWriter.write(vehicle.toString());
+                bufferedWriter.newLine();
+            }
 
+        } catch (IOException e) {
+            System.err.println("Error, Couldn't Add to CSV File");
         }
+    }
+
 
 
 }
