@@ -28,6 +28,11 @@ public class Dealership {
 
     // Dealership Action Methods
     public List<Vehicle> getVehiclesByPrice(double min, double max) {
+
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getPrice() >= min &&)
+        }
+
         return inventory;
     }
 

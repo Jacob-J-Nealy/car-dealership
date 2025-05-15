@@ -48,12 +48,12 @@ public class DealershipFileManager {
 
     private void saveDealership() {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME))) {
-            bufferedWriter.write( + "|" +
-                    getDealership().getAddress() + "|" +
-                    getDealership().getPhone());
+            bufferedWriter.write(dealership.getName()+ "|" +
+                                     dealership.getAddress() + "|" +
+                                     dealership.getPhone());
             bufferedWriter.newLine();
 
-            for (Vehicle vehicle : getDealership().getAllVehicles()) {
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
                 bufferedWriter.write(vehicle.toString());
                 bufferedWriter.newLine();
             }
