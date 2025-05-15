@@ -103,16 +103,11 @@ These are the user-focused goals that shaped my design decisions and priorities 
 - **Jacob Nealy** – Developer & French fry enthusiast 🥔  
 - Special thanks to:
   - **Raymond Maroun** – Potato Sensei & Workshop Wizard
-  - **Walter Donnellan** – Dedicated Tutor & Debug Partner
-  - **Adam Jessie** – Debug King & Clean Code Crusader
 
-> Thanks to all classmates for their support and teamwork  
 > #FullStackFryers 🥔🔥  
 > #SigmaData
 
 ---
-
-## 📸 Screenshots (Optional)
 
 *(Add screenshots of your terminal UI in action here)*
 
