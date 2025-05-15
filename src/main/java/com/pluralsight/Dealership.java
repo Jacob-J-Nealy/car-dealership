@@ -39,8 +39,8 @@ public class Dealership {
         return inventory;
     }
 
-    private void getVehiclesByColor(String color) {
-
+    public List<Vehicle> getVehiclesByColor(String color) {
+        return inventory;
     }
 
     private void getVehiclesByMileage(int min, int max) {

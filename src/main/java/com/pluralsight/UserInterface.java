@@ -142,10 +142,10 @@ Scanner scanner = new Scanner(System.in);
         System.out.println("Searching Vehicles By Year...");
         System.out.println("______________________________________");
 
-        System.out.print("Enter minimum vehicle year: ");
+        System.out.print("Enter minimum Vehicle Year: ");
         int min = scanner.nextInt();
 
-        System.out.print("Enter maximum vehicle year: ");
+        System.out.print("Enter maximum Vehicle Year: ");
         int max = scanner.nextInt();
         scanner.nextLine(); // scanner eater
 
@@ -153,11 +153,18 @@ Scanner scanner = new Scanner(System.in);
 
         List<Vehicle> processGetByYearFound = dealership.getVehicleByYear(min, max);
         displayVehicles(processGetByYearFound);
-
     }
 
     private void processGetByColorRequest() {
+        System.out.println("Searching Vehicles By Color...");
+        System.out.println("______________________________________");
 
+        System.out.print("Enter Vehicle Color: ");
+        String color = scanner.nextLine().trim();
+
+        System.out.printf("Loading All Vehicle in %s Color from Inventory", color);
+        List<Vehicle> processGetByColorFound = dealership.getVehiclesByColor(color);
+        displayVehicles(processGetByColorFound);
     }
 
     private void processGetByMileageRequest() {
